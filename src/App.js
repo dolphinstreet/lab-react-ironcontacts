@@ -31,6 +31,11 @@ function App() {
     setContacts(copyContacts)
   }
 
+  const handleDelete = (id) =>{
+    const newContacts = contacts.filter((contact) => contact.id !== id)
+    setContacts(newContacts)
+  }
+
   return <div className="App">
     <h1>IronContacts</h1>
     <button onClick={handleAddRandom}>Add random contacts </button>
@@ -56,6 +61,9 @@ function App() {
               <td>{actor.popularity}</td>
               {actor.wonOscar && <td>🏆</td>}
               {actor.wonEmmy ? <td>🏆</td> : <td></td>}
+              <td>
+                <button onClick={() => handleDelete(actor.id)}>Delete</button>
+              </td>
             </tr>
           )
         })}
