@@ -12,7 +12,6 @@ function App() {
   const handleAddRandom = () => {
     if(!contactsArray.length){return}
     const randomContact = contactsArray.splice(Math.floor(Math.random() * contactsArray.length),1)[0]
-    console.log(contactsArray, randomContact)
     setContacts([...contacts, randomContact])
     // if (!contacts.includes(randomContact)) {
     //   contacts.push(randomContact)
@@ -21,9 +20,23 @@ function App() {
     // }
   }
 
+  const handleSortByName = () =>{
+    const copyContacts = [...contacts]
+    copyContacts.sort((a,b) => a.name.localeCompare(b.name))
+    setContacts(copyContacts)
+  }
+  const handleSortByPopularity = () =>{
+    const copyContacts = [...contacts]
+    copyContacts.sort((a,b) => a.popularity - b.popularity)
+    setContacts(copyContacts)
+  }
+
   return <div className="App">
     <h1>IronContacts</h1>
     <button onClick={handleAddRandom}>Add random contacts </button>
+    <button onClick={handleSortByName}>Sort by name</button>
+    <button onClick={handleSortByPopularity}>Sort by popularity</button>
+
     <table>
       <thead>
         <tr>
