@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
   display: flex;
@@ -7,5 +8,76 @@
 }
 
 .App img{
-  max-height: 15vh;
+  border-radius: 50%;
+  object-fit: cover;
+  width: 12vh;
+  height: 12vh;
+  padding: 1rem;
+}
+
+
+.actor-line:nth-child(odd){
+  background-color: rgba(113, 171, 120, 0.218);
+}
+.actor-line:nth-child(even){
+  background-color: rgba(56, 167, 158, 0.18);
+}
+
+table{
+  border-spacing: unset;
+}
+
+th{
+  color: rgb(40, 123, 95);
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.423);
+}
+
+td{
+  font-weight: bold;
+  color: rgb(37, 115, 144);
+}
+
+
+
+button {
+  appearance: none;
+  background-color: #FAFBFC;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #24292E;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  padding: 6px 16px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+button:hover {
+  background-color: #F3F4F6;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+.delete-btn{
+  margin-right: 2rem;
+}
+
+.buttons-div{
+  display: flex;
+  padding-bottom: 2rem;
+  gap: 1rem;
 }

@@ -38,10 +38,11 @@ function App() {
 
   return <div className="App">
     <h1>IronContacts</h1>
-    <button onClick={handleAddRandom}>Add random contacts </button>
-    <button onClick={handleSortByName}>Sort by name</button>
-    <button onClick={handleSortByPopularity}>Sort by popularity</button>
-
+    <div className='buttons-div'>
+      <button onClick={handleAddRandom}>Add random contacts </button>
+      <button onClick={handleSortByName}>Sort by name</button>
+      <button onClick={handleSortByPopularity}>Sort by popularity</button>
+    </div>
     <table>
       <thead>
         <tr>
@@ -50,19 +51,20 @@ function App() {
           <th>Popularity</th>
           <th>Won an Oscar</th>
           <th>Won an Emmy</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
         {contacts.map((actor) => {
           return (
-            <tr key={actor.id}>
+            <tr key={actor.id} className="actor-line">
               <td><img src={actor.pictureUrl} alt={actor.name} /></td>
               <td>{actor.name}</td>
               <td>{actor.popularity}</td>
-              {actor.wonOscar && <td>🏆</td>}
+              {actor.wonOscar ? <td>🏆</td> : <td></td>}
               {actor.wonEmmy ? <td>🏆</td> : <td></td>}
               <td>
-                <button onClick={() => handleDelete(actor.id)}>Delete</button>
+                <button className="delete-btn"onClick={() => handleDelete(actor.id)}>Delete</button>
               </td>
             </tr>
           )
